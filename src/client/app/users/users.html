@@ -1,0 +1,51 @@
+<section class="mainbar">
+  <section class="matter">
+    <div class="container">
+      <div class="row">
+        <a class="btn btn-primary" href="/user" role="button">Novo Aluno</a>
+        <div class="widget wviolet">
+          <div ht-widget-header title="{{vm.title}}"></div>
+          <div class="widget-content user">
+            <table class="table table-condensed table-striped">
+                <thead>
+                  <tr>
+                    <th>Matrícula</th>
+                    <th>Nome</th>
+                    <th>Data de Nascimento</th>
+                    <th>e-Mail</th>
+                    <th colspan="3">Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="u in vm.users">
+                    <td>{{u.register}}</td>
+                    <td>{{u.name}}</td>
+                    <td>{{u.dob}}</td>
+                    <td>{{u.email}}</td>
+                    <td>
+                      <a href="/user/{{u.id}}">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                      </a>
+                    </td>
+                    <td>
+                      <a href="/user/{{u.id}}/edit">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                      </a>
+                    </td>
+                    <td>
+                      <a href="/user/{{u.id}}/delete">
+                        <span class="glyphicon glyphicon-trash"></span>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          <div class="widget-foot">
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

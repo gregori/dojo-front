@@ -1,0 +1,152 @@
+<section class="mainbar">
+  <section class="matter">
+    <form name="newUser" class="form-horizontal">
+    <fieldset>
+
+    <!-- Form Name -->
+    <legend>{{vm.title}}</legend>
+
+    <!-- Text input Register-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="register">Matrícula</label>  
+      <div class="col-md-3">
+        <input id="register" name="register" type="text" 
+          placeholder="Matrícula" class="form-control input-md" required="" ng-model="vm.register">
+      </div>
+    </div>
+
+
+    <!-- Text input Name-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="name">Nome</label>  
+      <div class="col-md-8">
+        <input id="name" name="name" type="text" 
+          placeholder="Nome do Aluno" class="form-control input-md" required="" ng-model="vm.name">
+      </div>
+    </div>
+
+    <!-- Text input Email-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="email">E-mail</label>  
+      <div class="col-md-8">
+        <input id="email" name="email" type="email" 
+          placeholder="Endereço de Email" class="form-control input-md" required="" ng-model="vm.email">
+        <div role="alert">
+          <span class="error" ng-show="newUser.email.$error.required">
+            Obrigatório!</span>
+          <span class="error" ng-show="newUser.email.$error.email">
+            E-mail inválido!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="dob">Data de Nascimento</label>
+      <div class="col-md-3">
+        <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
+          <div class="input-group">
+            <input type="text" class="form-control" 
+              data-ng-model="vm.dob" ng-blur="vm.onDobBlur($event)" ui-date-mask>
+              <span class="input-group-addon">
+                <i class="glyphicon glyphicon-calendar"></i>
+              </span>
+          </div>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+          <datetimepicker data-ng-model="vm.dob" 
+            data-datetimepicker-config="{ dropdownSelector: '#dropdown2', minView: 'day' }"
+            data-on-set-time="vm.onTimeSet(newDate, oldDate)"/>
+        </ul>
+      </div>
+      <div class="col-md-5" ng-show="vm.isChild" style="padding-top:7px;">
+        <label><input type="checkbox" name="child" ng-model="vm.child">Criança?</label>
+      </div>
+    </div>
+
+    <!-- Text input Name-->
+    <div class="form-group" ng-show="vm.adult">
+      <label class="col-md-2 control-label" for="name">CPF</label>  
+      <div class="col-md-3">
+        <input id="cpf" name="cpf" type="text" 
+          placeholder="CPF" class="form-control input-md" required="" ng-model="vm.cpf" ui-br-cpf-mask> 
+      </div>
+    </div>
+    <div class="form-group" ng-show="vm.adult">
+      <label class="col-md-2 control-label" for="name">RG</label>  
+      <div class="col-md-3">
+        <input id="rg" name="rg" type="text" 
+          placeholder="RG" class="form-control input-md" required="" ng-model="vm.rg">
+      </div>
+    </div>
+
+    <!-- Text input cep-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="cep">CEP</label>  
+      <div class="col-md-4">
+        <input id="cep" name="cep" type="text" 
+          placeholder="CEP" class="form-control input-md" required="" ng-model="vm.cep" 
+          ng-blur="vm.getAddressFromCEP($event)" ui-br-cep-mask>
+      </div>
+    </div>
+
+    <!-- Text input Street-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="street">Endereço</label>  
+      <div class="col-md-6">
+        <input id="street" name="street" type="text" 
+          placeholder="Rua" class="form-control input-md" required="" ng-model="vm.street">
+      </div>
+      <label class="col-md-2 control-label" for="number">Nº</label>
+      <div class="col-md-2">
+        <input id="number" name="number" type="text" class="form-control input-md" ng-model="vm.number">
+      </div>
+    </div>
+
+    <!-- Text input Neighborhood-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="neighborhood">Bairro</label>  
+      <div class="col-md-4">
+        <input id="neighborhood" name="neighborhood" type="text" 
+          placeholder="Bairro" class="form-control input-md" required="" ng-model="vm.neighborhood">
+      </div>
+    </div>
+
+    <!-- Text input City-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="city">Cidade</label>  
+      <div class="col-md-4">
+        <input id="city" name="city" type="text" 
+          placeholder="Cidade" class="form-control input-md" required="" ng-model="vm.city">
+      </div>
+      <label class="col-md-2 control-label" for="state">UF</label>  
+      <div class="col-md-2">
+        <select name="state" ng-model="vm.state" class="form-control" ng-options="state for state in vm.states">
+			    <option value="">--</option>
+		    </select>
+      </div>
+    </div>
+
+    <!-- Select Basic -->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="selectbasic">Select Basic</label>
+      <div class="col-md-4">
+        <select id="selectbasic" name="selectbasic" class="form-control">
+          <option value="1">Option one</option>
+          <option value="2">Option two</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Button (Double) -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="button1id">Double Button</label>
+      <div class="col-md-8">
+        <button id="button1id" name="button1id" class="btn btn-success">Good Button</button>
+        <button id="button2id" name="button2id" class="btn btn-danger">Scary Button</button>
+      </div>
+    </div>
+
+    </fieldset>
+    </form>
+  </section> <!-- matter -->
+</section> <!-- mainbar -->
