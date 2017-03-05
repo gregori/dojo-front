@@ -1289,24 +1289,6 @@ form {
 
 /*#endregion */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*#region Override background color theme */
 
 /*For Bootstrap 3*/
@@ -1497,7 +1479,13 @@ small {
 
 .input-group[class*="col-"] {
     width: 80%;
-    margin: 0 1.5em;}
+    margin: 0 1.5em;
+}
+
+.input-group-addon {
+    min-width: 60px;
+    text-align: left;
+}
 
 .user .user-pic {
     display: block;
@@ -1810,6 +1798,19 @@ a {
 }
 /*#endregion */
 
+/*#region form */
+.form-custom .form-group [class*="col-"] .form-group [class*="col-"] {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.form-custom .form-group [class*="col-"] .form-group {
+    margin-left: -1%;
+    margin-right: -1%;
+}
+.form-custom .form-group [class*="col-"] .form-group [class*="col-"]:not(:last-child) { margin-bottom: 5px }
+/*#endregion */
+
+
 /*#region Responsive */
 
 @media (max-width: 979px) {
@@ -1849,6 +1850,8 @@ a {
     .sidebar .sidebar-inner {
         display: block !important;
     }
+
+    .form-custom .form-group [class*="col-"] .form-group [class*="col-"]:not(:last-child) { margin-bottom: 0 }
 }
 
 @media (max-width: 767px) {
@@ -1886,6 +1889,17 @@ a {
     .sidebar .sidebar-inner {
         height: inherit;
     }
+
+    .form-custom .control-label { text-align: right }
+}
+
+@media (max-width:699px) { 
+	.form-custom .control-label {
+	    width: 100%;
+	    text-align: left;
+	}
+    .form-custom .payment-inputs { width: 100% } 
+	.form-custom .submit-form { margin-left: 0 }
 }
 
 @media (max-width: 480px) {

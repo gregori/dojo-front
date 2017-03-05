@@ -30,8 +30,8 @@
       {
         state: 'userEdit',
         config: {
-          url: '/user/:id/edit',
-          templateUrl: 'app/users/users.edit.html',
+          url: '/user/:register/edit',
+          templateUrl: 'app/users/users.new.html',
           controller: 'UsersEditController',
           controllerAs: 'vm',
           title: 'Alunos'
@@ -40,19 +40,9 @@
       {
         state: 'userView',
         config: {
-          url: '/user/:id',
+          url: '/user/:register',
           templateUrl: 'app/users/users.view.html',
           controller: 'UsersViewController',
-          controllerAs: 'vm',
-          title: 'Alunos'
-        }
-      },
-      {
-        state: 'userDelete',
-        config: {
-          url: '/user/:id/delete',
-          templateUrl: 'app/users/users.delete.html',
-          controller: 'UsersDeleteController',
           controllerAs: 'vm',
           title: 'Alunos'
         }

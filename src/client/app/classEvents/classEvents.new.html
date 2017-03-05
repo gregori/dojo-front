@@ -1,0 +1,70 @@
+<section class="mainbar">
+  <section class="matter">
+    <form name="newUser" class="form-horizontal form-custom">
+      <!-- BEGIN fieldset -->
+      <fieldset>
+      <legend>{{vm.title}}</legend>
+
+      <!-- BEGIN form-group dojo -->
+      <div class="form-group">
+        <div class="col-sm-1"><label class="control-label" for="dojo">Dojo</label></div>
+        <div class="col-sm-4">
+          <div class="input-group">
+            <select name="dojo" ng-model="vm.formData.dojo" class="form-control"> 
+              <!-- ng-options="dojo.name for dojo in vm.dojos track by dojo.id"> -->
+              <option value="">Dojo</option>
+              <option ng-repeat="dojo in vm.dojos" value="{{dojo._links.self.href}}">{{dojo.name}}</option>
+            </select>
+          </div>
+          <!-- /.input-group -->
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+      <!-- BEGIN form-group instrutor -->
+      <div class="form-group">
+        <div class="col-sm-1"><label class="control-label" for="instrutor">Instrutor</label></div>
+        <div class="col-sm-4">
+          <div class="input-group">
+            <select name="dojo" ng-model="vm.formData.instructor" class="form-control"> 
+              <!-- ng-options="dojo.name for dojo in vm.dojos track by dojo.id"> -->
+              <option value="">Instrutor</option>
+              <option ng-repeat="u in vm.users" value="{{u._links.self.href}}">{{u.name}}</option>
+            </select>
+          </div>
+          <!-- /.input-group -->
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+
+      <!-- BEGIN form-group classDate -->
+      <div class="form-group">
+        <div class="col-sm-1"><label class="control-label" for="classDate">Hora e Data</label></div>
+        <div class="col-sm-3">
+            <div class="input-group">
+              <input type="datetime-local" class="form-control" 
+                data-ng-model="vm.formData.classDate" ng-blur="vm.onDobBlur($event)" name="classDate" ui-date-mask>
+                <span class="input-group-addon">
+                  <i class="glyphicon glyphicon-calendar"></i>
+                </span>
+            </div>
+            <!-- /.input-group -->
+        </div>
+        <!-- /.col-sm-3 -->
+      </div>
+      <!-- /.form-group -->
+
+      <div class="form-group">
+         <div class="col-sm-offset-1 col-sm-8">
+            <button id="gravar" name="gravar" class="btn btn-success" ng-click="vm.processForm()">Gravar</button>
+            <button id="cancelar" name="cancelar" class="btn btn-danger" ng-click="vm.clearForm()">Cancelar</button>
+         </div>
+         <!-- /col-sm-offset-4.col-sm-8 -->
+      </div>
+      <!-- /.form-group -->
+    </form>
+
+    <p>{{ vm.formData }}</p>
+  </section> <!-- matter -->
+</section> <!-- mainbar -->

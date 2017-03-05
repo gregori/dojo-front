@@ -3,22 +3,22 @@
 
     angular
         .module('app.service')
-        .factory('UsersService', UsersService);
+        .factory('DojosService', DojosService);
 
-    UsersService.inject = ['$http', '$q', 'exception', 'logger', 'uri'];
+    DojosService.inject = ['$http', '$q', 'exception', 'logger', 'uri'];
     /* @ngInject */
-    function UsersService($http, $q, exception, logger, uri) {
+    function DojosService($http, $q, exception, logger, uri) {
         var service = {
-            getUsers:getUsers,
-            postUser: postUser,
-            deleteUser: deleteUser
+            getDojos:getDojos,
+            postDojo: postDojo,
+            deleteDojo: deleteDojo
         };
         
         return service;
 
         ////////////////
-        function getUsers() {
-            return $http.get(uri + '/users')
+        function getDojos() {
+            return $http.get(uri + '/dojoes')
                 .then(success)
                 .catch(fail);
 
@@ -27,26 +27,26 @@
             }
 
             function fail(e) {
-                return exception.catcher("XHR falhou ao obter usuários (getUsers)");
+                return exception.catcher("XHR falhou ao obter dojos (getDojos)");
             }
         }
 
-        function postUser(data) {
-            return $http.post(uri + '/users', data, {})
+        function postDojo(data) {
+            return $http.post(uri + '/dojoes', data, {})
                 .then(success)
                 .catch(fail);
 
             function success(response) {
                 console.log(response);
-                logger.success("Aluno " + response.name + " adicionado com sucesso!");
+                logger.success("Dojo " + response.name + " adicionado com sucesso!");
             }
 
             function fail(e) {
-                return exception.catcher("XHR falhou ao cadastrar usuário (postUser)");
+                return exception.catcher("XHR falhou ao cadastrar dojo (postDojo)");
             }
         }
 
-        function deleteUser(url) {
+        function deleteDojo(url) {
             return $http.delete(url)
                 .then(success)
                 .catch(fail);
@@ -56,7 +56,7 @@
             }
 
             function fail(e) {
-                return exception.catcher("XHR falhou ao remover aluno (deleteUser)");
+                return exception.catcher("XHR falhou ao remover aluno (deleteDojo)");
             }
         } 
     }

@@ -270,41 +270,6 @@
       <!-- /.form-group -->
       <!-- END form-group complement-neighborhood -->
 
-      <!-- BEGIN form-group line-1 -->
-      <div class="form-group">
-        <div class="col-sm-1"><label class="control-label">Telefone</label></div>
-         <div class="col-sm-4">
-            <div class="input-group">
-               <span class="input-group-addon" id="lblHome">Casa</span>
-               <input type="text" class="form-control" placeholder="Só Números" aria-describedby="lblHome" 
-                ng-model="vm.formData.phone" name="phone" ui-br-phone-number>
-            </div>
-            <!-- /.input-group -->
-         </div>
-         <!-- /.col-sm-4 -->
-         <div class="col-sm-4">
-            <div class="input-group">
-               <span class="input-group-addon" id="lblMobile">Celular</span>
-               <input type="text" class="form-control" name="mobilePhone" aria-describedby="lblMobile" 
-               ng-model="vm.formData.mobilePhone" ui-br-phone-number>
-            </div>
-            <!-- /.input-group -->
-         </div>
-         <!-- /.col-sm-4 -->
-         <div class="col-sm-4">
-            <div class="input-group">
-               <span class="input-group-addon" id="lblEmergency">Emergência</span>
-               <input type="text" class="form-control" name="emergencyPhone" aria-describedby="lblEmergency" 
-               ng-model="vm.formData.emergencyPhone" ui-br-phone-number>
-            </div>
-            <!-- /.input-group -->
-         </div>
-         <!-- /.col-sm-4 -->
-      </div>
-      <!-- /.form-group -->
-      <!-- END form-group line-1 -->
-
-
       <div class="form-group">
          <div class="col-sm-offset-1 col-sm-8">
             <button id="gravar" name="gravar" class="btn btn-success" ng-click="vm.processForm()">Gravar</button>

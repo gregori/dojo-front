@@ -6,5 +6,5 @@
     .module('app.core')
     .constant('toastr', toastr)
     .constant('moment', moment)
-    .constant('uri', 'http://localhost:8080');
+    .constant('uri', 'http://localhost:5000');
 })();

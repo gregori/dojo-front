@@ -63,6 +63,9 @@
   <script src="/bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
   <script src="/bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js"></script>
   <script src="/bower_components/angular-input-masks/angular-input-masks-standalone.js"></script>
+  <script src="/bower_components/angular-hateoas/src/angular-hateoas.js"></script>
+  <script src="/bower_components/angular-resource/angular-resource.js"></script>
+  <script src="/bower_components/angular-spring-data-rest/dist/angular-spring-data-rest.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -71,9 +74,12 @@
   <!-- inject:js -->
   <script src="/src/client/app/app.module.js"></script>
   <script src="/src/client/app/admin/admin.module.js"></script>
+  <script src="/src/client/app/beltExams/beltExams.module.js"></script>
+  <script src="/src/client/app/belts/belts.module.js"></script>
   <script src="/src/client/app/blocks/exception/exception.module.js"></script>
   <script src="/src/client/app/blocks/logger/logger.module.js"></script>
   <script src="/src/client/app/blocks/router/router.module.js"></script>
+  <script src="/src/client/app/classEvents/classEvents.module.js"></script>
   <script src="/src/client/app/core/core.module.js"></script>
   <script src="/src/client/app/dashboard/dashboard.module.js"></script>
   <script src="/src/client/app/layout/layout.module.js"></script>
@@ -82,10 +88,22 @@
   <script src="/src/client/app/widgets/widgets.module.js"></script>
   <script src="/src/client/app/admin/admin.controller.js"></script>
   <script src="/src/client/app/admin/admin.route.js"></script>
+  <script src="/src/client/app/beltExams/beltExams.controller.js"></script>
+  <script src="/src/client/app/beltExams/beltExams.edit.controller.js"></script>
+  <script src="/src/client/app/beltExams/beltExams.new.controller.js"></script>
+  <script src="/src/client/app/beltExams/beltExams.route.js"></script>
+  <script src="/src/client/app/belts/belts.controller.js"></script>
+  <script src="/src/client/app/belts/belts.edit.controller.js"></script>
+  <script src="/src/client/app/belts/belts.new.controller.js"></script>
+  <script src="/src/client/app/belts/belts.route.js"></script>
   <script src="/src/client/app/blocks/exception/exception-handler.provider.js"></script>
   <script src="/src/client/app/blocks/exception/exception.js"></script>
   <script src="/src/client/app/blocks/logger/logger.js"></script>
   <script src="/src/client/app/blocks/router/router-helper.provider.js"></script>
+  <script src="/src/client/app/classEvents/classEvents.controller.js"></script>
+  <script src="/src/client/app/classEvents/classEvents.edit.controller.js"></script>
+  <script src="/src/client/app/classEvents/classEvents.new.controller.js"></script>
+  <script src="/src/client/app/classEvents/classEvents.route.js"></script>
   <script src="/src/client/app/core/config.js"></script>
   <script src="/src/client/app/core/constants.js"></script>
   <script src="/src/client/app/core/core.route.js"></script>
@@ -96,6 +114,10 @@
   <script src="/src/client/app/layout/ht-top-nav.directive.js"></script>
   <script src="/src/client/app/layout/shell.controller.js"></script>
   <script src="/src/client/app/layout/sidebar.controller.js"></script>
+  <script src="/src/client/app/service/beltExams.service.js"></script>
+  <script src="/src/client/app/service/belts.service.js"></script>
+  <script src="/src/client/app/service/classEvents.service.js"></script>
+  <script src="/src/client/app/service/dojos.service.js"></script>
   <script src="/src/client/app/service/users.service.js"></script>
   <script src="/src/client/app/users/users.controller.js"></script>
   <script src="/src/client/app/users/users.edit.controller.js"></script>
@@ -104,6 +126,8 @@
   <script src="/src/client/app/widgets/ht-img-person.directive.js"></script>
   <script src="/src/client/app/widgets/ht-widget-header.directive.js"></script>
   <!-- endinject -->
+
+  <script src="/node_modules/confirm-click/confirm-click.js"></script>
 
   <!-- inject:templates:js -->
   <!-- endinject -->

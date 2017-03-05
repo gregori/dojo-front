@@ -1,0 +1,59 @@
+<section class="mainbar">
+  <section class="matter">
+    <form name="newUser" class="form-horizontal form-custom">
+      <!-- BEGIN fieldset -->
+      <fieldset>
+      <legend>{{vm.title}}</legend>
+
+      <!-- BEGIN form-group Register-->
+      <div class="form-group">
+        <div class="col-sm-1"><label class="control-label" for="color">Nome/Cor</label></div>
+        <div class="col-sm-4">
+          <input id="color" name="color" type="text" 
+            placeholder="Nome da Faixa" class="form-control" required="" ng-model="vm.formData.color">
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+      <!-- BEGIN form-group Name-->
+      <div class="form-group">
+        <label class="col-sm-4 control-label" for="colorCode">Cor</label>  
+        <div class="col-sm-2">
+          <input id="colorCode" name="colorCode" type="color" 
+            class="form-control" required="" ng-model="vm.formData.colorCode">
+        </div>
+        <!-- /.col-sm-8 -->
+      </div>
+      <!-- /.form-group -->
+
+      <!-- BEGIN form-group dob -->
+      <div class="form-group">
+        <div class="col-sm-1"><label class="control-label" for="nextBelt">Próxima Faixa</label></div>
+        <div class="col-sm-3">
+          <div class="input-group">
+            <select name="nextBelt" ng-model="vm.formData.nextBelt" class="form-control">
+              <option value="">Faixa</option>
+              <option ng-repeat="belt in vm.belts | filter: {child: vm.formData.child}" value="{{belt._links.self.href}}">{{belt.color}}</option>
+            </select>
+          </div>
+          <!-- /.input-group -->
+        </div>
+        <!-- /.col-sm-3 -->
+        <div class="col-md-3" style="padding-top:7px;">
+          <label><input type="checkbox" name="child" ng-model="vm.formData.child">Criança?</label>
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+      <div class="form-group">
+         <div class="col-sm-offset-1 col-sm-8">
+            <button id="gravar" name="gravar" class="btn btn-success" ng-click="vm.processForm()">Gravar</button>
+            <button id="cancelar" name="cancelar" class="btn btn-danger" ng-click="vm.clearForm()">Cancelar</button>
+         </div>
+         <!-- /col-sm-offset-4.col-sm-8 -->
+      </div>
+      <!-- /.form-group -->
+    </form>
+
+  </section> <!-- matter -->
+</section> <!-- mainbar -->
